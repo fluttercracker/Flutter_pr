@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:intl/intl.dart';
+import 'package:note_application/splash.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Note App',
+      title: 'Note Stack',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         scaffoldBackgroundColor: Colors.deepPurple.shade50,
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.deepPurple,
         ),
       ),
-      home: const MyHomePage(),
+      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -212,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Icon(Icons.sticky_note_2, color: Colors.white),
             SizedBox(width: 8),
             Flexible(
-              child: Text('My Notes',
+              child: Text('Note Stack',
                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                   overflow: TextOverflow.ellipsis),
             ),
